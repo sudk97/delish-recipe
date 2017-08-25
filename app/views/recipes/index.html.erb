@@ -1,0 +1,73 @@
+
+
+
+<section class="webdesigntuts-workshop">
+  <form action="" method="get">        
+    <input type="search" name="looking_for" placeholder="What do you want to eat today?">         
+    <button>Search</button>
+  </form>
+</section>
+
+<section id="hero" class="section ">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7 col-sm-6 hero">
+        <div class="hero-content">
+          <h1 style="color: #fff;">Cook Book</h1>
+          <p style="color: #c8c8c8 ">Learn to cook enticing delish meals</p>
+        </div>
+      </div>
+      
+      
+    </div>
+
+  </div>
+ 
+
+</section>
+<section id="portfolio">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+      <br>
+      <p><%= @search_term.upcase %> RECIPES </p>
+        <hr class="section">
+      </div>
+    </div>
+    <div class="row">
+
+     <% @recipe.each do |course| %>
+     <% if course["image_url"].nil? %>
+     <% else %>
+      <div class="col-sm-6 portfolio-item"> <a href= <%= course["f2f_url"] %> class="portfolio-link">
+        <div class="caption">
+          <div class="caption-content">
+            <h3><%= course["title"] %></h3>
+          </div>
+        </div>
+        
+        <img src=<%= course["image_url"] %> class="img-responsive center-block" alt="*image_missing" > </a> </div>
+        <% end  %>
+      <% end %>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="col-md-6 left">
+      <h4>Let's work together</h4>
+      <p> Call: +91 7676253722 OR Email :<a href="mailto:sudarshan.khasnis@gmail.com"> sudarshan.khasnis@gmail.com </a></p>
+    </div>
+    <div class="col-md-6 right">
+      <p>Copyright © 2017 All Rights Reserved<br>
+        Made by Sudarshan Khasnis<br>
+        Thanks to <a href="http://www.designstub.com/">DesignStub</a><br>
+        Powered by <a href="http://www.food2fork.com/">Food to Fork</a>
+        </p>
+    </div>
+  </div>
+</footer>
+
+
