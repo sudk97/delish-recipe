@@ -25,6 +25,10 @@
  
 
 </section>
+
+<% if recipe.nil? %>
+<h2>Sorry, No recipes found for entered query.</h2>
+<% else %>
 <section id="portfolio">
   <div class="container">
     <div class="row">
@@ -35,7 +39,6 @@
       </div>
     </div>
     <div class="row">
-
      <% @recipe.each do |course| %>
      <% if course["image_url"].nil? %>
      <% else %>
@@ -54,6 +57,7 @@
   </div>
 </section>
 
+<% end %>
 <footer class="footer">
   <div class="container">
     <div class="col-md-6 left">
